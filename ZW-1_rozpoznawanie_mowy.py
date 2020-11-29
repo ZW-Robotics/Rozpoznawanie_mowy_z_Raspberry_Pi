@@ -149,19 +149,7 @@ while True:
         Kamera.stop_preview()
         Komunikat_głosowy("Polecenie zostało wykonane")
         GPIO.output(3, GPIO.LOW)
-            
-    if polecenie == "nagraj film":
-        Komunikat_głosowy("Za pięć sekund zaświecę diody LED, następnie nagram film, który zapiszę na pulpicie")
-        sleep(5)
-        GPIO.output(3, GPIO.HIGH)
-        Kamera = picamera.PiCamera()
-        Kamera.resolution = (640, 480)
-        Kamera.start_recording('film.h264')
-        Kamera.wait_recording(10)
-        Kamera.stop_recording()
-        Komunikat_głosowy("Polecenie zostało wykonane")
-        GPIO.output(3, GPIO.LOW)
-
+           
     polecenie = ""
 
 
